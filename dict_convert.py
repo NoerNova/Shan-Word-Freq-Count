@@ -122,7 +122,7 @@ class ShanDictionaryConverter:
         """Tokenize Shan text using ShanNLP or fallback method."""
         if self.tokenizer:
             try:
-                return self.tokenizer(text)
+                return self.tokenizer(text, engine="newmm", keep_whitespace=False)
             except Exception as e:
                 logger.warning(f"ShanNLP tokenization failed: {e}")
         
